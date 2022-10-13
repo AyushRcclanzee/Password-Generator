@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d4a556eaee.js" crossorigin="anonymous"></script>
+    <title>Random Password Generator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Password Generator</h1>
+        <input type="text" id="PasswordField" class="PasswordField" placeholder="Generate Password" disabled>
+        <div class="buttons">
+            <button class="btn" id="btn"><i class="fa fa-spinner"></i> Generate</button>
+            <button class="btn btn2" id="btn2"> <i class="fa fa-refresh"></i> Reset</button>
+        </div>
+    </div>
+
+    <script>
+
+        const Btn = document.getElementById("btn")
+        const PasswordField = document.getElementById("PasswordField");
+        Btn.addEventListener("click", function(){
+            const allowed = {
+                uppers : "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                lowers : "abcdefghijklmnopqrstuvwxyz",
+                numbers : "0123456789",
+                symbols : "!@#$%^&"
+            }
+
+            const randomPassword = (str) => str.charAt(Math.floor(Math.random() * str.length));
+
+            const generatePassword = (length = 12) =>{
+                let password = "";
+
+                password += randomPassword(allowed.uppers);
+                password += randomPassword(allowed.lowers);
+                password += randomPassword(allowed.numbers);
+                password += randomPassword(allowed.symbols);
+
+                for(let i = password.length; i < length; i++){
+                    password += randomPassword(Object.values(allowed).join(''));
+                }
+                return password;
+            }
+
+            var password = generatePassword();
+
+            PasswordField.value = password;
+            const btn2 = document.getElementById("btn2");
+            btn2.addEventListener('click', () => {
+                PasswordField.value = "";
+            })
+        })
+    </script>
+</body>
+</html>

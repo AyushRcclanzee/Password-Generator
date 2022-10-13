@@ -1,0 +1,70 @@
+body{
+    font-family: sans-serif;
+    background: #1d2630;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container h1{
+    text-align: center;
+    color: rgb(219, 211, 211);
+    margin-bottom: 70px;
+    padding: 8px 22px;
+    border-radius: 15px;
+    background-image: repeating-linear-gradient(45deg, rgba(204, 204, 204, 0.705), #1d261dce);
+    cursor: default;
+}
+
+.PasswordField{
+    text-align: center;
+    width: 500px;
+    height: 45px;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px;
+    color: #1d2630;
+    border: none;
+    outline: none;
+    background: #ccc;
+    margin-bottom: 20px;
+    border-radius: 5px;
+
+}
+
+.PasswordField:hover{
+    cursor: text;
+}
+
+.btn{
+    width: 140px;
+    font-weight: bold;
+    font-size: 20px;
+    background: #61b16e;
+    color: #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    padding: 15px 20px;
+    border: none;
+
+}
+
+.btn2{
+    background: #be5252;
+}
+
+#btn{
+    width: fit-content;
+}
+
+i{
+    color: rgb(210, 226, 226);
+}
